@@ -1,3 +1,7 @@
+# Sampreeth's RFID with LCD and buzzer project
+# This uses Eleg Mega Board
+
+
 #include <LiquidCrystal.h>
 #include <SPI.h>
 #include <RFID.h>
