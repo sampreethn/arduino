@@ -1,5 +1,5 @@
 # Sampreeth's RFID with LCD and buzzer project
-# This uses Eleg Mega Board
+# This uses Elegoo Mega Board
 
 
 #include <LiquidCrystal.h>
@@ -37,7 +37,7 @@ void loop() {
     if (rfid.readCardSerial()) {
       rfidCard = String(rfid.serNum[0]) + " " + String(rfid.serNum[1]) + " " + String(rfid.serNum[2]) + " " + String(rfid.serNum[3]);
       Serial.println(rfidCard);
-      if (rfidCard == "18 6 13 40") {
+      if (rfidCard == "18 6 13 40") {   // This uses my RFID card's UID in order for the program to work give your RFID card's UID code by going to examples and MFRC-522>>write_personell_data and running that code, clicking on the serial monitor and scanning the card in front of the reader 
          Serial.println("Family member:granted");
         digitalWrite(14, HIGH);
         delay(100);
@@ -55,7 +55,7 @@ void loop() {
         
       }
       
-      if (rfidCard == "136 4 36 179") {
+      if (rfidCard == "136 4 36 179") {// This uses my RFID card's UID in order for the program to work give your RFID card's UID code by going to examples and MFRC-522>>write_personell_data and running that code, clicking on the serial monitor and scanning the card in front of the reader
          Serial.println("Sampreeth:granted");
         digitalWrite(14, HIGH);
         delay(100);
@@ -71,7 +71,7 @@ void loop() {
         digitalWrite(GREEN,LOW);
       }
             
-      if (rfidCard == "103 37 187 28") {
+      if (rfidCard == "103 37 187 28") {// This uses my RFID card's UID in order for the program to work give your RFID card's UID code by going to examples and MFRC-522>>write_personell_data and running that code, clicking on the serial monitor and scanning the card in front of the reader
          Serial.println("Intruder:Denied");
         digitalWrite(14, HIGH);
         delay(100);
